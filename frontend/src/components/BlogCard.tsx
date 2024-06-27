@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-
+import DOMPurify from "dompurify";
 interface BlogCardProps {
   authorName: string;
   title: string;
@@ -33,8 +33,10 @@ export const BlogCard = ({
           </div>
         </div>
         <div className="text-xl font-bold">{title}</div>
-        <div className="text-md font-thin pt-1">
-          {content.slice(0, 100) + "..."}
+        <div className="text-md font-thin pt-1"  dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(content.slice(0, 10) + "..."),
+          }}>
+        
         </div>
         <div className="text-slate-600 text-sm font-thin pt-3">{`${Math.ceil(
           content.length / 100
