@@ -1,6 +1,9 @@
 import { Appbar } from "./Appbar";
 import { Blog } from "../hooks";
 import { Avatar } from "./BlogCard";
+
+import DOMPurify from "dompurify";
+
 export const FullBlog = ({ blog }: { blog: Blog }) => {
   return (
     <div>
@@ -10,7 +13,14 @@ export const FullBlog = ({ blog }: { blog: Blog }) => {
           <div className=" col-span-8 pt-4">
             <div className="text-5xl font-extrabold">{blog.title}</div>
             <div className="text-slate-500 pt-2">Posted on 10/05/2024</div>
-            <div className="text-xl pt-4">{blog.content}</div>
+
+            <div
+              className="text-xl pt-4"
+              //@ts-ignore
+              dangerouslySetInnerHTML={{
+                __html: DOMPurify.sanitize(blog.content),
+              }}
+            ></div>
           </div>
 
           <div className=" pt-4 col-span-4">
