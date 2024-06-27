@@ -4,9 +4,7 @@ export const Quote = () => {
       <div className=" flex justify-center">
         <div className="max-w-lg   ">
           <div className="text-3xl font-semibold ">
-            " Mehnat karo fal ki chinta mat karo vo to bazaar se khareed
-            lenge!!!!!!!! (❁´◡`❁)(●'◡'●)╰(*°▽°*)╯(^///^)(*/ω＼*)☆*: .｡. o(≧▽≦)o
-            .｡.:*☆ "
+            “A thinker sees his own actions as experiments and questions--as attempts to find out something. Success and failure are for him answers above all.” 
           </div>
 
           <div className="max-w-md text-xl font-normal mt-4 ">
