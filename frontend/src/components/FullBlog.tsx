@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Appbar } from "./Appbar";
 import { Blog } from "../hooks";
 import { Avatar } from "./BlogCard";
 import DOMPurify from "dompurify";
 
 export const FullBlog = ({ blog }: { blog: Blog }) => {
+  
   const [readingProgress, setReadingProgress] = useState(0);
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [estimatedReadTime, setEstimatedReadTime] = useState("5 min");
